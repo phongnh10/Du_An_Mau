@@ -10,23 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.du_an_mau.R;
-import com.example.du_an_mau.dao.SachDAO;
 import com.example.du_an_mau.model.Sach;
 
 import java.util.List;
 
 public class SachMainAdapter extends RecyclerView.Adapter<SachMainAdapter.ViewHolder>{
 
-
     private List<Sach> sachList;
     private Context context;
-    private SachDAO sachDAO;
 
-
-    public SachMainAdapter(List<Sach> sachList, Context context, SachDAO sachDAO) {
+    public SachMainAdapter(List<Sach> sachList, Context context) {
         this.sachList = sachList;
         this.context = context;
-        this.sachDAO = sachDAO;
+        
     }
 
     @NonNull

@@ -3,7 +3,10 @@ package com.example.du_an_mau;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.os.Bundle;
+
 import com.example.du_an_mau.adapter.SachMainAdapter;
 import com.example.du_an_mau.dao.SachDAO;
 import com.example.du_an_mau.model.Sach;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         List<Sach> sachList = sachDAO.getAllSach();
 
         // Khởi tạo và thiết lập adapter
-        sachMainAdapter = new SachMainAdapter(sachList, this, sachDAO);
+        sachMainAdapter = new SachMainAdapter(sachList, this);
 
         // Thiết lập layout manager cho RecyclerView
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
