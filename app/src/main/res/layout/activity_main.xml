@@ -244,31 +244,31 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/home" />
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/book" />
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/phieumuon" />
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/user" />
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/setting" />
