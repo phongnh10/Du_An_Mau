@@ -21,7 +21,6 @@ public class SachDAO {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT idSach, tenSach, tacGia FROM Sach WHERE soluong < 100", null);
 
-
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
 
