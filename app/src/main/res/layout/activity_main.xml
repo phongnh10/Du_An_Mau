@@ -1,78 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#E1E0E0"
-    android:orientation="vertical">
+    android:background="#E1E0E0">
 
+    <!-- Top Bar -->
     <LinearLayout
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:background="#3B781A">
+        android:layout_height="wrap_content"
+        android:background="#3B781A"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:src="@drawable/baseline_dehaze_24" />
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="4"
             android:background="@drawable/bogoc"
             android:padding="10dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/icsearch"
-                android:layout_marginRight="20dp"/>
-
-
+                android:layout_marginEnd="20dp"/>
         </LinearLayout>
 
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/baseline_notifications_24"
             app:layout_constraintEnd_toEndOf="parent"/>
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
+            android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@drawable/baseline_account_circle_white" />
-
-
-
     </LinearLayout>
+
+    <!-- Section 1 -->
     <LinearLayout
+        android:id="@+id/section1"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
+        android:layout_below="@id/topBar"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/bogoc"
         app:backgroundTint="@null"
         android:orientation="horizontal">
+
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lượt mượn sách"
                 android:gravity="center"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#E91E63">
             </TextView>
 
@@ -81,28 +88,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:text="0"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#E91E63">
             </TextView>
-
         </LinearLayout>
+
         <TextView
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#E91E63"></TextView>
+
         <LinearLayout
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Lượt Trả Sách"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#E91E63">
             </TextView>
 
@@ -110,75 +119,81 @@
                 android:id="@+id/txtLuotTra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="0"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textColor="#E91E63">
             </TextView>
-
         </LinearLayout>
-
     </LinearLayout>
+
+    <!-- Section 2 -->
     <LinearLayout
+        android:id="@+id/section2"
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/section1"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/bogoc"
         app:backgroundTint="@null"
         android:orientation="vertical">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="111dp"
-           android:orientation="horizontal">
-           <Button
-               android:layout_width="100dp"
-               android:layout_height="100dp"
-               android:layout_marginTop="10dp"
-               android:drawableTop="@mipmap/icon_sach"
-               android:text="Sách"
-               android:scaleX="1.8"
-               android:scaleY="1.8"
-               android:padding="20dp"
-               android:textSize="10sp"
-               android:textColor="@color/black"
-               android:background="@android:color/transparent"
-               android:layout_marginLeft="20dp">
-           </Button>
-           <Button
-               android:layout_width="100dp"
-               android:layout_height="100dp"
-               android:layout_marginTop="10dp"
-               android:drawableTop="@mipmap/icon_docgia"
-               android:text="Độc giả"
-               android:scaleX="1.8"
-               android:scaleY="1.8"
-               android:padding="20dp"
-               android:textSize="10sp"
-               android:textColor="@color/black"
-               android:background="@android:color/transparent"
-               android:layout_marginLeft="20dp">
-           </Button>
-           <Button
-               android:layout_width="100dp"
-               android:layout_height="100dp"
-               android:layout_marginTop="10dp"
-               android:drawableTop="@mipmap/icon_baocao"
-               android:text="Thống kê"
-               android:scaleX="1.8"
-               android:scaleY="1.8"
-               android:padding="20dp"
-               android:textSize="10sp"
-               android:textColor="@color/black"
-               android:background="@android:color/transparent"
-               android:layout_marginLeft="20dp">
-           </Button>
 
-       </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:drawableTop="@mipmap/icon_sach"
+                android:text="Sách"
+                android:scaleX="1.8"
+                android:scaleY="1.8"
+                android:padding="20dp"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent">
+            </Button>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:drawableTop="@mipmap/icon_docgia"
+                android:text="Độc giả"
+                android:scaleX="1.8"
+                android:scaleY="1.8"
+                android:padding="20dp"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent">
+            </Button>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:drawableTop="@mipmap/icon_baocao"
+                android:text="Thống kê"
+                android:scaleX="1.8"
+                android:scaleY="1.8"
+                android:padding="20dp"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent">
+            </Button>
+        </LinearLayout>
+
         <Button
             android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:drawableTop="@mipmap/icon_them"
             android:text="Thêm"
@@ -188,32 +203,75 @@
             android:textSize="10sp"
             android:textColor="@color/black"
             android:background="@android:color/transparent"
-            android:layout_marginLeft="20dp">
+            android:layout_marginStart="10dp">
         </Button>
-
     </LinearLayout>
+
+    <!-- Section 3 -->
     <LinearLayout
+        android:id="@+id/section3"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:background="@drawable/bogoc"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/section2"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bogoc"
         app:backgroundTint="@null"
         android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sách Mượn Nhiều"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"></TextView>
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/lvMuonNhieu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-       </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sách Mượn Nhiều"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"></TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lvMuonNhieu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
 
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3B781A"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/home" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/book" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/phieumuon" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/user" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/setting" />
+    </LinearLayout>
 
-
-</LinearLayout>
+</RelativeLayout>

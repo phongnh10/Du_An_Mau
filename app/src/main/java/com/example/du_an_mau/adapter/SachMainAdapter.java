@@ -22,7 +22,7 @@ public class SachMainAdapter extends RecyclerView.Adapter<SachMainAdapter.ViewHo
     public SachMainAdapter(List<Sach> sachList, Context context) {
         this.sachList = sachList;
         this.context = context;
-        
+
     }
 
     @NonNull

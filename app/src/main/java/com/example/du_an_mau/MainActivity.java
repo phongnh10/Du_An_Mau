@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         sachDAO = new SachDAO(this);
 
         RecyclerView recyclerView = findViewById(R.id.lvMuonNhieu);
-        List<Sach> sachList = sachDAO.getAllSach();
+        List<Sach> sachList = sachDAO.getTopSach();
 
         // Khởi tạo và thiết lập adapter
         sachMainAdapter = new SachMainAdapter(sachList, this);
