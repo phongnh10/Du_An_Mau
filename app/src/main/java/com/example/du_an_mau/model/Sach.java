@@ -11,9 +11,6 @@ public class Sach {
     private String namXuatBan;
     private int soLuong;
 
-    public Sach(int anInt, String string, String cursorString, String s, String string1, int cursorInt) {
-    }
-
     public Sach(int idSach, String tenSach, String tacGia, String theLoai, String nhaXuatBan, String namXuatBan, int soLuong) {
         this.idSach = idSach;
         this.tenSach = tenSach;
@@ -30,7 +27,16 @@ public class Sach {
         this.tacGia = tacGia;
     }
 
-    public Sach(String tenSach, String tacGia) {
+    public Sach(int idSach, String tenSach, String theLoai, int soLuong, String tacGia) {
+        this.idSach = idSach;
+        this.tenSach = tenSach;
+        this.theLoai = theLoai;
+        this.soLuong = soLuong;
+        this.tacGia = tacGia;
+    }
+
+
+    public Sach(int cursorInt, String cursorString, String string, int anInt, String tenSach, String tacGia) {
         this.tenSach = tenSach;
         this.tacGia = tacGia;
     }

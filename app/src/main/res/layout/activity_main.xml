@@ -243,30 +243,35 @@
         android:background="#3B781A"
         android:orientation="horizontal">
         <ImageView
+            android:id="@+id/imgTrangChu"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/home" />
         <ImageView
+            android:id="@+id/imgSach"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/book" />
         <ImageView
+            android:id="@+id/imgPhieuMuon"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/phieumuon" />
         <ImageView
+            android:id="@+id/imgNguoiDung"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
             android:src="@mipmap/user" />
         <ImageView
+            android:id="@+id/imgCaiDat"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"

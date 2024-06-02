@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.du_an_mau.adapter.SachMainAdapter;
 import com.example.du_an_mau.dao.SachDAO;
@@ -20,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        goBook();
+        goPhieuMuon();
+        goCaiDat();
 
         litsViewMain();
     }
@@ -41,6 +48,40 @@ public class MainActivity extends AppCompatActivity {
 
         // Gán adapter cho RecyclerView
         recyclerView.setAdapter(sachMainAdapter);
+    }
+
+    public void goBook(){
+        ImageView imgSach = findViewById(R.id.imgSach);
+
+        imgSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, BookActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+    }
+    public void goPhieuMuon(){
+        ImageView imgPhieuMuon = findViewById(R.id.imgPhieuMuon);
+
+        imgPhieuMuon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, InformationActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+    }
+    public void goCaiDat(){
+        ImageView imgCaiDat = findViewById(R.id.imgCaiDat);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, BookActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
     }
 
 
