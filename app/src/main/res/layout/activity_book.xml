@@ -9,24 +9,27 @@
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:background="#3B781A"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="6">
 
         <ImageView
-            android:layout_width="30dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:layout_marginStart="20dp"
+            android:layout_weight="1"
             android:src="@drawable/baseline_arrow_back_ios_24" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="10dp"
+            android:layout_weight="4"
             android:text="SÁCH"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="20dp" />
 
@@ -34,7 +37,8 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:src="@drawable/iconseach"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -61,7 +65,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="66dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:background="#3B781A"
         android:orientation="horizontal">
