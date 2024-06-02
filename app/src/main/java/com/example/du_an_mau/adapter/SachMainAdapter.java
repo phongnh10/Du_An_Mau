@@ -46,7 +46,7 @@ public class SachMainAdapter extends RecyclerView.Adapter<SachMainAdapter.ViewHo
         return sachList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtTenSach, txtTacGia;
 
         public ViewHolder(@NonNull View itemView) {
