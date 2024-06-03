@@ -11,6 +11,18 @@ public class Sach {
     private String namXuatBan;
     private int soLuong;
 
+    public Sach() {
+    }
+
+    public Sach(String tenSach, String tacGia, String theLoai, String nhaXuatBan, String namXuatBan, int soLuong) {
+        this.tenSach = tenSach;
+        this.tacGia = tacGia;
+        this.theLoai = theLoai;
+        this.nhaXuatBan = nhaXuatBan;
+        this.namXuatBan = namXuatBan;
+        this.soLuong = soLuong;
+    }
+
     public Sach(int idSach, String tenSach, String tacGia, String theLoai, String nhaXuatBan, String namXuatBan, int soLuong) {
         this.idSach = idSach;
         this.tenSach = tenSach;
@@ -19,6 +31,7 @@ public class Sach {
         this.nhaXuatBan = nhaXuatBan;
         this.namXuatBan = namXuatBan;
         this.soLuong = soLuong;
+
     }
 
     public Sach(int idSach, String tenSach, String tacGia) {
@@ -35,11 +48,6 @@ public class Sach {
         this.tacGia = tacGia;
     }
 
-
-    public Sach(int cursorInt, String cursorString, String string, int anInt, String tenSach, String tacGia) {
-        this.tenSach = tenSach;
-        this.tacGia = tacGia;
-    }
 
     public int getIdSach() {
         return idSach;

@@ -3,6 +3,7 @@ package com.example.du_an_mau;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -30,10 +31,6 @@ public class BookActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_book);
 
-        goHome();
-        goCaiDat();
-        goPhieuMuon();
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -41,6 +38,13 @@ public class BookActivity extends AppCompatActivity {
         });
 
         litsViewSach();
+
+        goHome();
+        goCaiDat();
+        goPhieuMuon();
+        addBook();
+        back();
+
     }
     public void litsViewSach(){
         sachDAO = new SachDAO(this);
@@ -95,5 +99,27 @@ public class BookActivity extends AppCompatActivity {
         });
     }
 
+    public void addBook(){
+        Button btnAddSach = findViewById(R.id.btnAddSach);
 
+        btnAddSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( BookActivity.this, AddbookActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+    }
+
+    public void back() {
+        ImageView imgBack = findViewById(R.id.imgBack);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BookActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
 }

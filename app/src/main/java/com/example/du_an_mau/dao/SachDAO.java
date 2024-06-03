@@ -1,5 +1,6 @@
 package com.example.du_an_mau.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -61,4 +62,43 @@ public class SachDAO {
         return sachList;
     }
 
+    public boolean themSach(Sach sach) {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tensach", sach.getTenSach());
+        contentValues.put("tacgia", sach.getTacGia());
+        contentValues.put("theloai", sach.getTheLoai());
+        contentValues.put("nhaxuatban", sach.getNhaXuatBan());
+        contentValues.put("namxuatban", sach.getNamXuatBan());
+        contentValues.put("soluong", sach.getSoLuong());
+
+        long check = sqLiteDatabase.insert("sach", null, contentValues);
+        if (check == -1) return false;
+        return true;
+    }
+    public boolean suaSach(Sach sach){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tensach", sach.getTenSach());
+        contentValues.put("tacgia", sach.getTacGia());
+        contentValues.put("theloai", sach.getTheLoai());
+        contentValues.put("nhaxuatban", sach.getTenSach());
+        contentValues.put("namxuatban", sach.getNamXuatBan());
+        contentValues.put("soluong", sach.getSoLuong());
+
+        int check = sqLiteDatabase.update("sach",contentValues,"idsach=?",new String[]{String.valueOf(sach.getIdSach())});
+        if (check <= 0) return false;
+        return true;
+    }
+
+    public boolean xoaSach(int idSach){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        int check = sqLiteDatabase.delete("sach","idSach=?", new String[]{String.valueOf(idSach)});
+
+        if( check <=0) return false;
+        return true;
+
+    }
 }
