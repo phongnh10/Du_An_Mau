@@ -37,7 +37,7 @@ public class BookActivity extends AppCompatActivity {
             return insets;
         });
 
-        litsViewSach();
+
 
         goHome();
         goCaiDat();
@@ -46,11 +46,18 @@ public class BookActivity extends AppCompatActivity {
         back();
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        litsViewSach();
+    }
+
     public void litsViewSach(){
         sachDAO = new SachDAO(this);
 
         RecyclerView recyclerView = findViewById(R.id.rcvSach);
-        List<Sach> sachList = sachDAO.getSach();
+        List<Sach> sachList = sachDAO.getAllSach();
 
         // Khởi tạo và thiết lập adapter
         sachAdapter = new SachAdapter(sachList, this);

@@ -11,7 +11,7 @@ public class Sach {
     private String namXuatBan;
     private int soLuong;
 
-    public Sach() {
+    public Sach(int anInt, String string, String cursorString, String theLoai, String nhaXuatBan, int cursorInt, String s) {
     }
 
     public Sach(String tenSach, String tacGia, String theLoai, String nhaXuatBan, String namXuatBan, int soLuong) {

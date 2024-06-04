@@ -1,47 +1,28 @@
 package com.example.du_an_mau;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.du_an_mau.dao.SachDAO;
 import com.example.du_an_mau.model.Sach;
 
-import java.util.ArrayList;
-
 public class InformationActivity extends AppCompatActivity {
 
-    private Context context;
     private SachDAO sachDAO;
-    private ArrayList<Sach> sachList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_information);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-
-        settingSach();
-    }
-
-    public void settingSach() {
         sachDAO = new SachDAO(this);
 
         EditText edtTenSach = findViewById(R.id.edtTenSach);
@@ -51,74 +32,89 @@ public class InformationActivity extends AppCompatActivity {
         EditText edtNhaXuatBan = findViewById(R.id.edtNhaXuatBan);
         EditText edtNamXuatBan = findViewById(R.id.edtNamXuatBan);
 
-        Button btnSua = findViewById(R.id.btnThemSach);
+        ImageView imgBack = findViewById(R.id.imgBack);
+
+        Button btnSua = findViewById(R.id.btnSuaSach);
         Button btnXoa = findViewById(R.id.btnXoaSach);
 
-        // Tạo một đối tượng Sach để sử dụng các phương thức getter
-        Sach sach = new Sach();
+        // Nhận dữ liệu từ Intent
+        int idSach = getIntent().getIntExtra("SACH_ID", -1);
+        String tenSach = getIntent().getStringExtra("TEN_SACH");
+        String theLoai = getIntent().getStringExtra("THE_LOAI");
+        int soLuong = getIntent().getIntExtra("SO_LUONG", 0);
+        String tacGia = getIntent().getStringExtra("TAC_GIA");
+        String nhaXuatBan = getIntent().getStringExtra("NHA_XUAT_BAN");
+        String namXuatBan = getIntent().getStringExtra("NAM_XUAT_BAN");
 
-        // Đặt dữ liệu lên các EditText nếu cần
-        edtTenSach.setText(sach.getTenSach());
-        edtSoLuong.setText(String.valueOf(sach.getSoLuong())); // Chuyển số lượng sang chuỗi
-        edtTheLoai.setText(sach.getTheLoai());
-        edtNhaXuatBan.setText(sach.getNhaXuatBan());
-        edtNamXuatBan.setText(sach.getNamXuatBan());
-        edtTacGia.setText(sach.getTacGia());
+        // Đặt dữ liệu lên các EditText
+        edtTenSach.setText(tenSach);
+        edtSoLuong.setText(String.valueOf(soLuong));
+        edtTacGia.setText(tacGia);
+        edtTheLoai.setText(theLoai);
+        edtNhaXuatBan.setText(nhaXuatBan);
+        edtNamXuatBan.setText(namXuatBan);
 
         btnSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tenSach = edtTenSach.getText().toString();
-                String soLuongString = edtSoLuong.getText().toString();
-                int soLuong = Integer.parseInt(soLuongString);
+                String newTenSach = edtTenSach.getText().toString();
+                String newSoLuongString = edtSoLuong.getText().toString();
+                int newSoLuong = Integer.parseInt(newSoLuongString);
+                String newTheLoai = edtTheLoai.getText().toString();
+                String newNhaXuatBan = edtNhaXuatBan.getText().toString();
+                String newNamXuatBan = edtNamXuatBan.getText().toString();
+                String newTacGia = edtTacGia.getText().toString();
 
-                String theLoai = edtTheLoai.getText().toString();
-                String nhaXuatBan = edtNhaXuatBan.getText().toString();
-                String namXuatBan = edtNamXuatBan.getText().toString();
-                String tacGia = edtTacGia.getText().toString();
-
-                if (tenSach.length() == 0 || soLuongString.length() == 0 || theLoai.length() == 0 || nhaXuatBan.length() == 0 || namXuatBan.length() == 0 || tacGia.length() == 0) {
+                if (newTenSach.isEmpty() || newSoLuongString.isEmpty() || newTheLoai.isEmpty() || newNhaXuatBan.isEmpty() || newNamXuatBan.isEmpty() || newTacGia.isEmpty()) {
                     Toast.makeText(InformationActivity.this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 } else {
-                    Sach sach = new Sach(tenSach, tacGia, theLoai, nhaXuatBan, namXuatBan, soLuong);
+                    Sach sach = new Sach(idSach, newTenSach, newTacGia, newTheLoai, newNhaXuatBan, newNamXuatBan, newSoLuong);
                     boolean check = sachDAO.suaSach(sach);
                     if (check) {
+                      //  Intent intent = new Intent(InformationActivity.this,BookActivity.class);
+                        finish();
                         Toast.makeText(InformationActivity.this, "Chỉnh sửa thành công", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(InformationActivity.this, "Chỉnh sửa thất bại", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
 
+        btnXoa.setOnClickListener(view -> xoa(tenSach, idSach));
+        back();
     }
 
-    private void xoa (String tenSach,int idSach){
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+    private void xoa(String tenSach, int idSach) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Thông Báo");
         builder.setMessage("Bạn có muốn xoá sản phẩm \"" + tenSach + "\" không");
 
-        builder.setPositiveButton("Xoá", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                boolean check = sachDAO.xoaSach(idSach);
-                if (check) {
-                    Toast.makeText(context, "Xoá thành công", Toast.LENGTH_SHORT).show();
-
-                }
+        builder.setPositiveButton("Xoá", (dialogInterface, i) -> {
+            boolean check = sachDAO.xoaSach(idSach);
+            if (check) {
+                Toast.makeText(this, "Xoá thành công", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(InformationActivity.this,BookActivity.class);
+                finish();
             }
         });
-        builder.setNegativeButton("Hủy bỏ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // Do nothing or handle cancel action
-            }
+
+        builder.setNegativeButton("Hủy bỏ", (dialogInterface, i) -> {
         });
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
     }
+
+    private void back(){
+        ImageView imgBach = findViewById(R.id.imgBack);
+        imgBach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InformationActivity.this,BookActivity.class);
+                finish();
+            }
+        });
+    }
+
 }
