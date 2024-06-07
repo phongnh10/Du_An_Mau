@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Du_An_Mau"
         tools:targetApi="31">
         <activity
+            android:name=".PhieuMuonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".model.PhieuMuon_Activity"
+            android:exported="false" />
+        <activity
             android:name=".CaidatActivity"
             android:exported="false" />
         <activity

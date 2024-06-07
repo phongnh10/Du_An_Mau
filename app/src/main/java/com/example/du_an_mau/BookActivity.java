@@ -44,6 +44,7 @@ public class BookActivity extends AppCompatActivity {
         goPhieuMuon();
         addBook();
         back();
+        goThongKe();
 
     }
 
@@ -89,7 +90,7 @@ public class BookActivity extends AppCompatActivity {
         imgPhieuMuon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( BookActivity.this, InformationActivity.class);
+                Intent intent = new Intent( BookActivity.this, PhieuMuonActivity.class);
                 startActivity(intent);
                 finish();            }
         });
@@ -100,7 +101,7 @@ public class BookActivity extends AppCompatActivity {
         imgCaiDat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( BookActivity.this, BookActivity.class);
+                Intent intent = new Intent( BookActivity.this, CaidatActivity.class);
                 startActivity(intent);
                 finish();            }
         });
@@ -127,6 +128,17 @@ public class BookActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        });
+    }
+    public void goThongKe(){
+        ImageView imgCaiDat = findViewById(R.id.imgNguoiDung);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( BookActivity.this, ThongkeActivity.class);
+                startActivity(intent);
+                finish();            }
         });
     }
 }

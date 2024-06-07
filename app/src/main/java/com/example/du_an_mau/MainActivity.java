@@ -9,16 +9,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.du_an_mau.adapter.SachMainAdapter;
+import com.example.du_an_mau.dao.PhieuMuonDAO;
 import com.example.du_an_mau.dao.SachDAO;
 import com.example.du_an_mau.model.Sach;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private SachDAO sachDAO;
     private SachMainAdapter sachMainAdapter;
+    private PhieuMuonDAO phieuMuonDAO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +32,16 @@ public class MainActivity extends AppCompatActivity {
         goBook();
         goPhieuMuon();
         goCaiDat();
-
-        litsViewMain();
+        hienThi();
+        goThongKe();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        litsViewMain();
+        hienThi();
+    }
 
     public void litsViewMain(){
         sachDAO = new SachDAO(this);
@@ -67,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         imgPhieuMuon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( MainActivity.this, InformationActivity.class);
+                Intent intent = new Intent( MainActivity.this, PhieuMuonActivity.class);
                 startActivity(intent);
                 finish();            }
         });
@@ -78,12 +89,39 @@ public class MainActivity extends AppCompatActivity {
         imgCaiDat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( MainActivity.this, BookActivity.class);
+                Intent intent = new Intent( MainActivity.this, CaidatActivity.class);
                 startActivity(intent);
                 finish();            }
         });
     }
 
+    public void goThongKe(){
+        ImageView imgCaiDat = findViewById(R.id.imgNguoiDung);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, ThongkeActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+    }
+
+    public void hienThi(){
+        phieuMuonDAO = new PhieuMuonDAO(this);
+        int soLuotMuon = phieuMuonDAO.demLuotMuonSach();
+        int soLuotTra = phieuMuonDAO.demLuotTraSach();
+
+        // Khởi tạo TextView và thiết lập giá trị
+        TextView txtLuotMuon = findViewById(R.id.txtLuotMuon);
+        TextView txtLuotTra = findViewById(R.id.txtLuotTra);
+
+        // Chuyển đổi số nguyên thành chuỗi và thiết lập vào TextView
+        txtLuotMuon.setText(String.valueOf(soLuotMuon));
+        txtLuotTra.setText(String.valueOf(soLuotTra));
+
+
+    }
 
 }
 

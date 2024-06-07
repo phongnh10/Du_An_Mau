@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThongkeActivity"
-    android:orientation="vertical">
+    tools:context=".ThongkeActivity">
 
+    <!-- Top Bar -->
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#3B781A"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THỐNG KÊ"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_gravity="center"/>
+
         <ImageView
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/baseline_arrow_back_ios_24" />
+            android:src="@android:color/transparent"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="THỐNG KÊ"
-            android:textColor="@color/white"
-            android:padding="10dp"
-            android:textSize="30dp"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
     </LinearLayout>
 
+    <!-- Main Content Area -->
     <LinearLayout
+        android:id="@+id/contentLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottomBar"
         android:orientation="vertical"
         android:background="#FFFFFF"
         android:padding="20dp">
@@ -47,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ngày: Hôm nay"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"/>
 
@@ -55,62 +64,124 @@
             android:layout_width="wrap_content"
             android:layout_height="202dp"
             android:src="@mipmap/anhthongke1" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/anhthongke2"/>
 
+        <!-- Statistics Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:orientation="horizontal"
             android:background="@drawable/bogocmauxam">
 
+            <!-- Borrowed Books -->
             <LinearLayout
-                android:layout_width="205dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Lượt mượn sách"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="#B10000"/>
 
                 <EditText
+                    android:id="@+id/txtLuotMuon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bogocmauxam"
                     android:text="100"
-                    android:textSize="40dp" />
+                    android:textSize="40sp" />
+
             </LinearLayout>
+
+            <!-- Returned Books -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:layout_gravity="center">
+                android:gravity="center">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
                     android:text="Lượt trả sách"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textColor="#B10000"/>
+
                 <EditText
+                    android:id="@+id/txtLuotTra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5"
-                    android:textSize="40dp"
+                    android:textSize="40sp"
                     android:background="@drawable/bogocmauxam"/>
+
             </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
 
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3B781A"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imgTrangChu"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/home" />
+
+        <ImageView
+            android:id="@+id/imgSach"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/book" />
+
+        <ImageView
+            android:id="@+id/imgPhieuMuon"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/phieumuon" />
+
+        <ImageView
+            android:id="@+id/imgNguoiDung"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/user" />
+
+        <ImageView
+            android:id="@+id/imgCaiDat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/setting" />
+
+    </LinearLayout>
+
+</RelativeLayout>

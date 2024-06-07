@@ -127,7 +127,7 @@ public class AddbookActivity extends AppCompatActivity {
         imgPhieuMuon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddbookActivity.this,AddbookActivity.class);
+                Intent intent = new Intent(AddbookActivity.this,PhieuMuonActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -140,7 +140,7 @@ public class AddbookActivity extends AppCompatActivity {
         imgCaiDat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddbookActivity.this, BookActivity.class);
+                Intent intent = new Intent(AddbookActivity.this, CaidatActivity.class);
                 startActivity(intent);
                 finish();
             }

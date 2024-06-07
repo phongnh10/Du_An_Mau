@@ -1,139 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThongkeActivity"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:id="@+id/topBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#3B781A"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/baseline_arrow_back_ios_24" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="CÀI ĐẶT"
-            android:textColor="@color/white"
-            android:padding="10dp"
-            android:textSize="30dp"/>
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
-    </LinearLayout>
+    tools:context=".ThongkeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#FFFFFF"
-        android:padding="20dp">
+        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="111dp"
-            android:src="@mipmap/logo" />
-        <TextView
+        <LinearLayout
+            android:id="@+id/topBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="THƯ VIỆN MIỀN TÂY"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="10dp"
-            android:textColor="#3B781A" />
+            android:background="#3B781A"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/baseline_arrow_back_ios_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="CÀI ĐẶT"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_gravity="center" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bogocmauxam"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="30dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chỉnh sửa thông tin"
-                android:textSize="20dp"
-                android:paddingBottom="20dp"
-                android:textColor="#246000"/>
+            android:background="#FFFFFF"
+            android:padding="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bật thông báo"
-                    android:textSize="20dp"
-                    android:layout_marginBottom="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tự động cập nhật"
-                    android:textSize="20dp"/>
-            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="111dp"
+                android:src="@mipmap/logo" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thông tin thêm"
-                android:textSize="20dp"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:textColor="#246000"/>
-
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Về chúng tôi"
-                    android:textSize="20dp"
-                    android:layout_marginBottom="10dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chính sách bảo mật"
-                    android:textSize="20dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:text="THƯ VIỆN MIỀN TÂY"
+                android:textSize="30sp"
+                android:textStyle="bold"
                 android:gravity="center"
-                android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
-                    android:text="Đăng Xuất"
-                    android:textSize="20dp"
-                    android:textColor="#A50303"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:background="@drawable/bogoc"/>
-            </LinearLayout>
+                android:layout_marginBottom="10dp"
+                android:textColor="#3B781A" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bogocmauxam"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chỉnh sửa thông tin"
+                    android:textSize="20dp"
+                    android:paddingBottom="20dp"
+                    android:textColor="#246000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bật thông báo"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tự động cập nhật"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thông tin thêm"
+                    android:textSize="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:textColor="#246000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Về chúng tôi"
+                        android:textSize="20dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chính sách bảo mật"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/txtDangXuat"
+                        android:layout_width="200dp"
+                        android:layout_height="50dp"
+                        android:text="Đăng Xuất"
+                        android:textSize="20dp"
+                        android:textColor="#A50303"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bogoc" />
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3B781A"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/imgTrangChu"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/home" />
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imgSach"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/book" />
+
+        <ImageView
+            android:id="@+id/imgPhieuMuon"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/phieumuon" />
+
+        <ImageView
+            android:id="@+id/imgNguoiDung"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/user" />
+
+        <ImageView
+            android:id="@+id/imgCaiDat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@mipmap/setting" />
+    </LinearLayout>
+
+</RelativeLayout>
