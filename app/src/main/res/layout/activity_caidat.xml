@@ -15,8 +15,8 @@
         <LinearLayout
             android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#3B781A"
+            android:layout_height="60dp"
+            android:background="#036666"
             android:orientation="horizontal">
 
             <ImageView
@@ -31,10 +31,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="CÀI ĐẶT"
+                android:text="Cài đặt"
                 android:textColor="@color/white"
                 android:padding="10dp"
-                android:textSize="20dp" />
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -58,12 +59,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="THƯ VIỆN MIỀN TÂY"
-                android:textSize="30sp"
+                android:text="Thư viện miền tây"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_marginBottom="10dp"
-                android:textColor="#3B781A" />
+                android:textColor="#107105" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,7 +79,7 @@
                     android:text="Chỉnh sửa thông tin"
                     android:textSize="20dp"
                     android:paddingBottom="20dp"
-                    android:textColor="#246000" />
+                    android:textColor="#248277" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,7 +108,7 @@
                     android:textSize="20dp"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:textColor="#246000" />
+                    android:textColor="#248277" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -141,10 +142,10 @@
                         android:layout_height="50dp"
                         android:text="Đăng Xuất"
                         android:textSize="20dp"
-                        android:textColor="#A50303"
+                        android:textColor="@color/white"
                         android:gravity="center"
                         android:layout_gravity="center"
-                        android:background="@drawable/bogoc" />
+                        android:background="@drawable/bogocmauxanh" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -156,7 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="#3B781A"
+        android:background="#036666"
         android:orientation="horizontal">
 
         <ImageView

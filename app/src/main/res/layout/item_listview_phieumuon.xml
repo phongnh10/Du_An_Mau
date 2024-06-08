@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="Phiếu số 1"
-                android:textColor="#E91E63"
+                android:textColor="#036666"
                 android:textStyle="bold" />
 
             <TextView
@@ -37,7 +37,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="left"
                 android:text="Nguyễn Văn A"
-                android:textColor="#E91E63" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtNgayMuon"
@@ -45,8 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="left"
-                android:text="Ngày Mượn: 10/20/20"
-                android:textColor="#E91E63" />
+                android:text="Ngày Mượn: 10/20/2024"
+                android:textColor="#036666" />
 
             <TextView
                 android:id="@+id/txtNgayTra"
@@ -54,8 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:gravity="left"
-                android:text="Ngày Trả: 20/20/2002"
-                android:textColor="#E91E63" />
+                android:text="Ngày Trả: 20/20/2024"
+                android:textColor="#036666" />
 
 
         </LinearLayout>
