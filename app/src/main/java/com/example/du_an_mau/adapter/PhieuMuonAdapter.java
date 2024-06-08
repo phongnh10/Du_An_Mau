@@ -2,6 +2,7 @@ package com.example.du_an_mau.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.du_an_mau.ChitietphieumuonActivity;
-import com.example.du_an_mau.InformationActivity;
 import com.example.du_an_mau.R;
 import com.example.du_an_mau.model.PhieuMuon;
 
@@ -49,13 +49,14 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.View
 
         // Thay đổi màu nền của txtTrangThai dựa trên trạng thái hoặc bất kỳ điều kiện nào
 
-//        if (phieuMuon.getTrangThai().equals("Chưa Trả") || phieuMuon.getTrangThai().equals("chưa trả") || phieuMuon.getTrangThai().equals("chưa")|| phieuMuon.getTrangThai().equals("Chưa")) {
-//            holder.txtTrangThai.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color_red));
-//        } else if (phieuMuon.getTrangThai().equals("Đã Trả") || phieuMuon.getTrangThai().equals("đã trả")|| phieuMuon.getTrangThai().equals("Trả")|| phieuMuon.getTrangThai().equals("trả")) {
-//            holder.txtTrangThai.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color_green));
-//        } else {
-//            holder.txtTrangThai.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color_3));
-//        }
+        if (phieuMuon.getTrangThai().equals("Chưa Trả") || phieuMuon.getTrangThai().equals("chưa trả") || phieuMuon.getTrangThai().equals("chưa") || phieuMuon.getTrangThai().equals("Chưa") || phieuMuon.getTrangThai().equals("chua")) {
+            holder.txtTrangThai.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.bogocred));
+        } else if (phieuMuon.getTrangThai().equals("Đã Trả") || phieuMuon.getTrangThai().equals("đã trả") || phieuMuon.getTrangThai().equals("Trả") || phieuMuon.getTrangThai().equals("trả") || phieuMuon.getTrangThai().equals("tra")) {
+            holder.txtTrangThai.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.bogocgreen));
+
+        } else {
+            holder.txtTrangThai.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color_3));
+        }
 
         holder.llItem.setOnClickListener(view -> {
             Intent intent = new Intent(context, ChitietphieumuonActivity.class);

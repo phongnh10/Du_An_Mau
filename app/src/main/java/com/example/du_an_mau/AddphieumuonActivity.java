@@ -48,10 +48,10 @@ public class AddphieumuonActivity extends AppCompatActivity {
         themPhieuMuon();
 
         back();
-//        goBook();
-//        goCaiDat();
-//        goPhieuMuon();
-//        goSach();
+        goBook();
+        goCaiDat();
+        goPhieuMuon();
+        goSach();
     }
 
 
@@ -93,6 +93,57 @@ public class AddphieumuonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AddphieumuonActivity.this, PhieuMuonActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    public void goBook() {
+        ImageView imgSach = findViewById(R.id.imgTrangChu);
+
+        imgSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddphieumuonActivity.this, BookActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    public void goPhieuMuon() {
+        ImageView imgPhieuMuon = findViewById(R.id.imgPhieuMuon);
+
+        imgPhieuMuon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddphieumuonActivity.this,PhieuMuonActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    public void goCaiDat() {
+        ImageView imgCaiDat = findViewById(R.id.imgCaiDat);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddphieumuonActivity.this, CaidatActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+    public void goSach() {
+        ImageView imgCaiDat = findViewById(R.id.imgSach);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddphieumuonActivity.this, BookActivity.class);
                 startActivity(intent);
                 finish();
             }

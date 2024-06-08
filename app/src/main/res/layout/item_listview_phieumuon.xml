@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/llItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -46,7 +47,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="left"
                 android:text="Ngày Mượn: 10/20/2024"
-                android:textColor="#036666" />
+                 />
 
             <TextView
                 android:id="@+id/txtNgayTra"
@@ -55,7 +56,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="left"
                 android:text="Ngày Trả: 20/20/2024"
-                android:textColor="#036666" />
+               />
 
 
         </LinearLayout>
@@ -71,12 +72,11 @@
                 android:id="@+id/txtTrangThai"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:background="@drawable/bogoc"
-                android:backgroundTint="#009688"
+                app:backgroundTint="@null"
                 android:gravity="center"
                 android:text="Trả"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 ></TextView>
         </LinearLayout>
 

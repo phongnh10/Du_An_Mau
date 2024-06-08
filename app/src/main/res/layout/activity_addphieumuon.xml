@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddphieumuonActivity"
+    android:background="#9DD5B6"
     android:orientation="vertical">
 
     <LinearLayout
@@ -40,6 +41,12 @@
             android:layout_weight="1"
             android:layout_gravity="center"/>
     </LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottomBar">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -169,7 +176,7 @@
         <EditText
             android:id="@+id/edtGhiChu"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:hint="Đã mượn sách nhiều lần."
             android:background="@drawable/bogoc"
             android:paddingTop="7dp"
@@ -217,5 +224,54 @@
         </LinearLayout>
 
     </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#036666"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/imgTrangChu"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/homee" />
+
+        <ImageView
+            android:id="@+id/imgSach"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/book" />
+
+        <ImageView
+            android:id="@+id/imgPhieuMuon"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_phieumuon_vang" />
+
+        <ImageView
+            android:id="@+id/imgNguoiDung"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/user" />
+
+        <ImageView
+            android:id="@+id/imgCaiDat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@mipmap/setting" />
+    </LinearLayout>
+
+</RelativeLayout>

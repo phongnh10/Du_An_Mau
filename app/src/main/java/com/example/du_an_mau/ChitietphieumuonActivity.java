@@ -74,6 +74,14 @@ public class ChitietphieumuonActivity extends AppCompatActivity {
         imgBack.setOnClickListener(v -> onBackPressed());
         update();
 
+        back();
+        goBook();
+        goPhieuMuon();
+        goSach();
+        goCaiDat();
+        goThongKe();
+
+
     }
 
     public void update() {
@@ -161,6 +169,18 @@ public class ChitietphieumuonActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ChitietphieumuonActivity.this,BookActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+    public void goThongKe() {
+        ImageView imgCaiDat = findViewById(R.id.imgNguoiDung);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ChitietphieumuonActivity.this,ThongkeActivity.class);
                 startActivity(intent);
                 finish();
             }

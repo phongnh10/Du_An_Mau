@@ -166,7 +166,7 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:src="@mipmap/home" />
+            android:src="@mipmap/homee" />
 
         <ImageView
             android:id="@+id/imgSach"
@@ -198,7 +198,7 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:src="@mipmap/setting" />
+            android:src="@mipmap/icon_st_vang" />
     </LinearLayout>
 
 </RelativeLayout>

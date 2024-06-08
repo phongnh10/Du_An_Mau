@@ -4,7 +4,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookActivity">
+    tools:context=".BookActivity"
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:id="@+id/topBar"
@@ -52,7 +53,7 @@
     <Button
         android:id="@+id/btnAddSach"
         android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
@@ -76,14 +77,14 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:src="@mipmap/home" />
+            android:src="@mipmap/homee" />
         <ImageView
             android:id="@+id/imgSach"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:src="@mipmap/book" />
+            android:src="@mipmap/icon_sach_vang" />
         <ImageView
             android:id="@+id/imgPhieuMuon"
             android:layout_width="0dp"

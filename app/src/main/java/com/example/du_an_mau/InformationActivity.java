@@ -83,6 +83,11 @@ public class InformationActivity extends AppCompatActivity {
 
         btnXoa.setOnClickListener(view -> xoa(tenSach, idSach));
         back();
+        goBook();
+        goPhieuMuon();
+        goSach();
+        goCaiDat();
+        goThongKe();
     }
 
     private void xoa(String tenSach, int idSach) {
@@ -112,6 +117,68 @@ public class InformationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(InformationActivity.this,BookActivity.class);
+                finish();
+            }
+        });
+    }
+    public void goBook() {
+        ImageView imgSach = findViewById(R.id.imgTrangChu);
+
+        imgSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InformationActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    public void goPhieuMuon() {
+        ImageView imgPhieuMuon = findViewById(R.id.imgPhieuMuon);
+
+        imgPhieuMuon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InformationActivity.this,PhieuMuonActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    public void goCaiDat() {
+        ImageView imgCaiDat = findViewById(R.id.imgCaiDat);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InformationActivity.this, CaidatActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+    public void goSach() {
+        ImageView imgCaiDat = findViewById(R.id.imgSach);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InformationActivity.this,BookActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+    public void goThongKe() {
+        ImageView imgCaiDat = findViewById(R.id.imgNguoiDung);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(InformationActivity.this,ThongkeActivity.class);
+                startActivity(intent);
                 finish();
             }
         });

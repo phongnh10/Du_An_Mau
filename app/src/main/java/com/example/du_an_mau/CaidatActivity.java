@@ -52,6 +52,8 @@ public class CaidatActivity extends AppCompatActivity {
         goBook();
         goPhieuMuon();
         goCaiDat();
+        goTrangChu();
+        back();
 
     }
 
@@ -78,15 +80,36 @@ public class CaidatActivity extends AppCompatActivity {
         });
     }
     public void goCaiDat(){
+        ImageView imgCaiDat = findViewById(R.id.imgNguoiDung);
+
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( CaidatActivity.this,  ThongkeActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+    }
+    public void goTrangChu(){
         ImageView imgCaiDat = findViewById(R.id.imgTrangChu);
 
         imgCaiDat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( CaidatActivity.this,  MainActivity.class);
+                Intent intent = new Intent( CaidatActivity.this,   MainActivity.class);
                 startActivity(intent);
                 finish();            }
         });
     }
+    public void back(){
+        ImageView imgCaiDat = findViewById(R.id.imgBack);
 
+        imgCaiDat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( CaidatActivity.this,   MainActivity.class);
+                startActivity(intent);
+                finish();            }
+        });
+    }
 }
