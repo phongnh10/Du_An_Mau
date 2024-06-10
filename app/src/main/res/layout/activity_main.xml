@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B7DDC9"
+    android:background="@mipmap/bgtree"
     tools:context=".MainActivity">
 
     <!-- Top Bar -->
@@ -13,7 +13,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#036666"
+        android:background="@mipmap/bgwhite"
         android:orientation="horizontal">
 
         <ImageView
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="4"
-            android:background="@drawable/bogoc"
+            android:background="@drawable/bogocvienxanh"
             android:orientation="horizontal"
             android:padding="10dp">
 
@@ -64,170 +64,190 @@
         android:orientation="vertical"
         android:weightSum="5">
 
-        <LinearLayout
-            android:id="@+id/section1"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_below="@id/topBar"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/bogockhongvien"
-            android:orientation="horizontal"
-            app:backgroundTint="@null">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
+                android:id="@+id/section1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topBar"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                app:backgroundTint="@null">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Lượt mượn sách"
+                        android:textColor="#0B6E4F"
+                        android:textSize="19dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/txtLuotMuon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#25A18E"
+                        android:textSize="30dp"></TextView>
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Lượt mượn sách"
-                    android:textColor="#248277"
-                    android:textSize="19dp"
-                    android:textStyle="bold"></TextView>
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#DFDFDF"></TextView>
 
-                <TextView
-                    android:id="@+id/txtLuotMuon"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:text="0"
-                    android:textColor="#248277"
-                    android:textSize="30dp"></TextView>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Lượt trả sách"
+                        android:textColor="#0B6E4F"
+                        android:textSize="19dp"
+                        android:textStyle="bold"></TextView>
+
+                    <TextView
+                        android:id="@+id/txtLuotTra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="#25A18E"
+                        android:textSize="30dp"></TextView>
+                </LinearLayout>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#248277"></TextView>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Lượt Trả Sách"
-                    android:textColor="#248277"
-                    android:textSize="19dp"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:id="@+id/txtLuotTra"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="0"
-                    android:textColor="#248277"
-                    android:textSize="30dp"></TextView>
-            </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <!-- Section 2 -->
-        <LinearLayout
-            android:id="@+id/section2"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_below="@id/section1"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_weight="2"
-            android:background="@drawable/bogockhongvien"
-            android:orientation="vertical"
-            app:backgroundTint="@null"
-            android:padding="10dp">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp">
 
             <LinearLayout
+                android:id="@+id/section2"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:drawableTop="@mipmap/icon_sach"
-                    android:padding="20dp"
-                    android:scaleX="1.8"
-                    android:scaleY="1.8"
-                    android:text="Sách"
-                    android:textColor="@color/black"
-                    android:textSize="10sp"></Button>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:drawableTop="@mipmap/icon_docgia"
-                    android:padding="20dp"
-                    android:scaleX="1.8"
-                    android:scaleY="1.8"
-                    android:text="Độc giả"
-                    android:textColor="@color/black"
-                    android:textSize="10sp"></Button>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:drawableTop="@mipmap/icon_baocao"
-                    android:padding="20dp"
-                    android:scaleX="1.8"
-                    android:scaleY="1.8"
-                    android:text="Thống kê"
-                    android:textColor="@color/black"
-                    android:textSize="10sp"></Button>
-            </LinearLayout>
-
-            <Button
-                android:layout_width="100dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/section1"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:drawableTop="@mipmap/icon_them"
-                android:padding="20dp"
-                android:scaleX="1.8"
-                android:scaleY="1.8"
-                android:text="Thêm"
-                android:textColor="@color/black"
-                android:textSize="10sp"></Button>
-        </LinearLayout>
+                android:layout_marginEnd="10dp"
+                android:layout_weight="2"
+                android:background="@drawable/bogockhongvien"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:backgroundTint="@null">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/baseline_menu_book_1"
+                        android:padding="20dp"
+                        android:scaleX="1.8"
+                        android:scaleY="1.8"
+                        android:text="Sách"
+                        android:textColor="#058F28"
+                        android:textSize="10sp"></Button>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/baseline_assignment_ind_24"
+                        android:padding="20dp"
+                        android:scaleX="1.8"
+                        android:scaleY="1.8"
+                        android:text="Độc giả"
+                        android:textColor="#215EA1"
+                        android:textSize="10sp"></Button>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/baseline_assessment_24"
+                        android:padding="20dp"
+                        android:scaleX="1.8"
+                        android:scaleY="1.8"
+                        android:text="Thống kê"
+                        android:textColor="#98921C"
+                        android:textSize="10sp"></Button>
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/baseline_add_24"
+                    android:padding="20dp"
+                    android:scaleX="1.8"
+                    android:scaleY="1.8"
+                    android:text="Thêm"
+                    android:textColor="#AC1919"
+                    android:textSize="10sp"></Button>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
         <!-- Section 3 -->
         <LinearLayout
             android:id="@+id/section3"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/section2"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="2"
-            android:background="@drawable/bogockhongvien"
             android:orientation="vertical"
             app:backgroundTint="@null">
 
@@ -237,8 +257,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:text="Sách Mượn Nhiều"
-                android:textColor="#248277"
+                android:text="Sách được độc giả quan tâm"
+                android:textColor="#0B6E4F"
                 android:textSize="19dp"
                 android:textStyle="bold"></TextView>
 
@@ -256,7 +276,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="#036666"
+        android:background="#073B3A"
         android:orientation="horizontal">
 
         <ImageView

@@ -78,7 +78,7 @@
                 android:gravity="center"
                 android:text="Trả"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 ></TextView>
         </LinearLayout>
 

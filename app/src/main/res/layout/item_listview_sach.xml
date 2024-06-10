@@ -3,16 +3,15 @@
    android:id="@+id/llItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="116dp"
-            android:layout_height="150dp"
+            android:layout_height="160dp"
             android:src="@mipmap/cochannhan" />
 
         <LinearLayout
@@ -30,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:text="Sách Cổ Chân Nhân"
-                android:textColor="#E91E63"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -41,7 +40,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="left"
                 android:text="Mã Sách: 012456"
-                android:textColor="#E91E63" />
+                android:textColor="#0B6E4F" />
 
             <TextView
                 android:id="@+id/txtSoluong"
@@ -50,7 +49,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="left"
                 android:text="Số Lượng: 100"
-                android:textColor="#E91E63" />
+                android:textColor="#0B6E4F" />
 
             <TextView
                 android:id="@+id/txtTheLoai"
@@ -59,7 +58,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="left"
                 android:text="Thể Loại: Tiên Hiệp"
-                android:textColor="#E91E63" />
+                android:textColor="#0B6E4F" />
 
             <TextView
                 android:id="@+id/txtTacGia"
@@ -68,8 +67,7 @@
                 android:layout_marginTop="5dp"
                 android:gravity="left"
                 android:text="Tác Giả: Chân Nhân"
-                android:textColor="#E91E63" />
-
+                android:textColor="#0B6E4F" />
         </LinearLayout>
     </LinearLayout>
 
@@ -77,5 +75,5 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="4dp"
-        android:background="#009688" />
+        android:background="#CFCFCF" />
 </LinearLayout>

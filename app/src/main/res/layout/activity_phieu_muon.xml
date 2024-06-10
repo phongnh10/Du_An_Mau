@@ -4,14 +4,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhieuMuonActivity"
-    android:background="#FFFFFF">
+    tools:context=".PhieuMuonActivity">
 
     <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#036666"
+        android:background="@mipmap/bgwhite"
         android:orientation="horizontal"
         android:weightSum="6">
 
@@ -30,9 +29,9 @@
             android:gravity="center"
             android:padding="10dp"
             android:layout_weight="4"
-            android:text="Phiếu Mượn"
+            android:text="Phiếu mượn"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="#0B6E4F"
             android:textSize="25dp" />
 
         <ImageView
@@ -40,7 +39,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/iconseach"/>
+            android:src="@drawable/baseline_manage_search_1"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -50,7 +49,7 @@
         android:layout_marginBottom="50dp"
         android:layout_below="@id/topBar"
         android:padding="10dp"
-        android:background="#B7DDC9"></androidx.recyclerview.widget.RecyclerView>
+        android:background="@mipmap/bgtree"></androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/btnAddPhieuMuon"
@@ -62,16 +61,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="80dp"
-        android:backgroundTint="#248277"
+        android:backgroundTint="#25A18E"
         android:padding="10dp"
         android:textStyle="bold"
-        android:text="Thêm Phiếu Mượn"></Button>
+        android:text="Thêm phiếu mượn"></Button>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:background="#036666"
+        android:background="#073B3A"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/imgTrangChu"
