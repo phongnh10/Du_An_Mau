@@ -86,6 +86,8 @@ public class AddbookActivity extends AppCompatActivity {
                     boolean check = sachDAO.themSach(sach);
                     if (check) {
                         Toast.makeText(AddbookActivity.this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AddbookActivity.this,BookActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(AddbookActivity.this, "Thêm sản phẩm thất bại", Toast.LENGTH_SHORT).show();
                     }
