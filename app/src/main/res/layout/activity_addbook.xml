@@ -53,7 +53,7 @@
             android:id="@+id/contentLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@mipmap/nencayxanh"
+            android:background="@mipmap/bgwhite"
             android:orientation="vertical"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
@@ -196,7 +196,7 @@
                     android:id="@+id/btnThemSach"
                     android:layout_width="200dp"
                     android:layout_height="50dp"
-                    android:backgroundTint="#25A18E"
+                    android:backgroundTint="#6BBF59"
                     android:text="Thêm"
                     android:textSize="20dp"/>
             </LinearLayout>
