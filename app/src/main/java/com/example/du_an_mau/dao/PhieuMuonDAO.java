@@ -23,7 +23,7 @@ public class PhieuMuonDAO {
     public ArrayList<PhieuMuon> getPhieuMuon() {
         ArrayList<PhieuMuon> phieuMuonList = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT idPhieuMuon, nguoimuon, sodienthoai, sachmuon, ghichu, ngaymuon, ngaytra, trangthai FROM PhieuMuon", null);
+        Cursor cursor = db.rawQuery("SELECT idPhieuMuon, nguoimuon, sodienthoai, sachmuon, ngaymuon, ngaytra, ghichu, trangthai FROM PhieuMuon", null);
 
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -53,9 +53,9 @@ public class PhieuMuonDAO {
         contentValues.put("nguoimuon", phieuMuon.getNguoiMuon());
         contentValues.put("sodienthoai", phieuMuon.getSoDienThoai());
         contentValues.put("sachmuon", phieuMuon.getSachMuon());
-        contentValues.put("ghichu", phieuMuon.getGhiChu());
         contentValues.put("ngaymuon", phieuMuon.getNgayMuon());
         contentValues.put("ngaytra", phieuMuon.getNgayTra());
+        contentValues.put("ghichu", phieuMuon.getGhiChu());
         contentValues.put("trangthai", phieuMuon.getTrangThai());
 
         long check = sqLiteDatabase.insert("PhieuMuon", null, contentValues);
@@ -70,9 +70,9 @@ public class PhieuMuonDAO {
         contentValues.put("nguoimuon", phieuMuon.getNguoiMuon());
         contentValues.put("sodienthoai", phieuMuon.getSoDienThoai());
         contentValues.put("sachmuon", phieuMuon.getSachMuon());
-        contentValues.put("ghichu", phieuMuon.getGhiChu());
         contentValues.put("ngaymuon", phieuMuon.getNgayMuon());
         contentValues.put("ngaytra", phieuMuon.getNgayTra());
+        contentValues.put("ghichu", phieuMuon.getGhiChu());
         contentValues.put("trangthai", phieuMuon.getTrangThai());
 
         int check = sqLiteDatabase.update("PhieuMuon", contentValues, "idPhieuMuon=?", new String[]{String.valueOf(phieuMuon.getIdPhieuMuon())});

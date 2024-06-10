@@ -5,29 +5,36 @@ public class PhieuMuon {
     private String nguoiMuon;
     private String soDienThoai;
     private String sachMuon;
-    private String ghiChu;
     private String ngayMuon;
     private String ngayTra;
+    private String ghiChu;
+
     private String trangThai;
 
-    public PhieuMuon(String nguoiMuon, String soDienThoai, String sachMuon, String ghiChu, String ngayMuon, String ngayTra, String trangThai) {
+    public PhieuMuon() {
+    }
+
+//    tenNguoiMuon, soDienThoai, sachMuon, ngayMuon, ngayTra, ghiChu,trangThai
+
+
+    public PhieuMuon(String nguoiMuon, String soDienThoai, String sachMuon, String ngayMuon, String ngayTra, String ghiChu, String trangThai) {
         this.nguoiMuon = nguoiMuon;
         this.soDienThoai = soDienThoai;
         this.sachMuon = sachMuon;
-        this.ghiChu = ghiChu;
         this.ngayMuon = ngayMuon;
         this.ngayTra = ngayTra;
+        this.ghiChu = ghiChu;
         this.trangThai = trangThai;
     }
 
-    public PhieuMuon(int idPhieuMuon, String nguoiMuon, String soDienThoai, String sachMuon, String ghiChu, String ngayMuon, String ngayTra, String trangThai) {
+    public PhieuMuon(int idPhieuMuon, String nguoiMuon, String soDienThoai, String sachMuon, String ngayMuon, String ngayTra, String ghiChu, String trangThai) {
         this.idPhieuMuon = idPhieuMuon;
         this.nguoiMuon = nguoiMuon;
         this.soDienThoai = soDienThoai;
         this.sachMuon = sachMuon;
-        this.ghiChu = ghiChu;
         this.ngayMuon = ngayMuon;
         this.ngayTra = ngayTra;
+        this.ghiChu = ghiChu;
         this.trangThai = trangThai;
     }
 

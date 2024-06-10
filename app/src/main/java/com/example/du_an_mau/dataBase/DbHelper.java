@@ -17,23 +17,23 @@ public class DbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("CREATE TABLE Sach (idSach INTEGER PRIMARY KEY AUTOINCREMENT, tensach TEXT, tacgia TEXT, theloai TEXT, nhaxuatban TEXT, namxuatban TEXT, soluong INTEGER)");
 
-        sqLiteDatabase.execSQL("CREATE TABLE PhieuMuon (idPhieuMuon INTEGER PRIMARY KEY AUTOINCREMENT, nguoimuon TEXT, sodienthoai TEXT, sachmuon TEXT, ghichu TEXT, ngaymuon TEXT, ngaytra TEXT, trangthai TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE PhieuMuon (idPhieuMuon INTEGER PRIMARY KEY AUTOINCREMENT, nguoimuon TEXT, sodienthoai TEXT, sachmuon TEXT, ngaymuon TEXT, ngaytra TEXT, ghichu TEXT, trangthai TEXT)");
 
         sqLiteDatabase.execSQL("INSERT INTO userADMIN (name, user, pass) VALUES ('Nguyen Hong Phong', 'phongnh10', '10')");
         sqLiteDatabase.execSQL("INSERT INTO userADMIN (name, user, pass) VALUES ('admin', 'admin', '1')");
 
         sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Cổ Chân Nhân', 'Chân Nhân', 'Tiên Hiệp','TenCen','2018',100)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Tiên Nghịch', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Trạch Nhật Phi Thăng', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Tiên Nghịch', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',122)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',299)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Trạch Nhật Phi Thăng', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',299)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Cổ Chân Nhân', 'Chân Nhân', 'Tiên Hiệp','TenCen','2018',4100)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Tiên Nghịch', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',599)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',599)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Trạch Nhật Phi Thăng', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',699)");
         sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Cổ Chân Nhân', 'Chân Nhân', 'Tiên Hiệp','TenCen','2018',100)");
         sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Tiên Nghịch', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Trạch Nhật Phi Thăng', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Cổ Chân Nhân', 'Chân Nhân', 'Tiên Hiệp','TenCen','2018',100)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Tiên Nghịch', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',99)");
-        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Trạch Nhật Phi Thăng', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',599)");
+        sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Thế Giới Tiên Hiệp', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
         sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Cổ Chân Nhân', 'Chân Nhân', 'Tiên Hiệp','TenCen','2018',100)");
         sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Tiên Nghịch', 'Nhĩ Căn', 'Tiên Hiệp','TenCen','2014',99)");
         sqLiteDatabase.execSQL("INSERT INTO Sach (tensach, tacgia, theloai, nhaxuatban, namxuatban,soluong) VALUES ('Khủng Bố Sống Lại', 'Ma Niệm', 'Linh Dị','TenCen','2014',99)");

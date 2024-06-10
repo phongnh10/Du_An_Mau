@@ -90,7 +90,7 @@
             android:layout_centerInParent="true"
             android:layout_margin="20dp"
             app:cardCornerRadius="20dp"
-            app:cardElevation="100dp">
+            app:cardElevation="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="140dp"
