@@ -28,8 +28,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        goChangePass();
-
     }
 
     public void checkUserPass(){
@@ -59,16 +57,5 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void goChangePass(){
-        TextView txtChangePass = findViewById(R.id.txtChangePass);
 
-        txtChangePass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, ChangePasswordActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-    }
 }

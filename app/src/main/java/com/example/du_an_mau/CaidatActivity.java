@@ -112,4 +112,17 @@ public class CaidatActivity extends AppCompatActivity {
                 finish();            }
         });
     }
+
+    public void goChangePass(){
+        TextView txtChangePass = findViewById(R.id.txtChangePass);
+
+        txtChangePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CaidatActivity.this, ChangePasswordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
 }
