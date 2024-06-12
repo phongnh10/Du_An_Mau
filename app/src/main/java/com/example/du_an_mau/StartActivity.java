@@ -10,37 +10,49 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class StartActivity extends AppCompatActivity {
 
+    private boolean hasNavigated = false;
+    private Handler handler = new Handler();
+    private Runnable navigateRunnable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_star);
-
-        onActivity3s();
 
         LinearLayout linearLayout = findViewById(R.id.activityStar);
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goLoin();
+                goLogin();
             }
         });
 
+        onActivity3s();
     }
 
-    private void onActivity3s(){
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+    private void onActivity3s() {
+        navigateRunnable = new Runnable() {
             @Override
             public void run() {
-                goLoin();
+                goLogin();
             }
-        }, 3000);
+        };
+        handler.postDelayed(navigateRunnable, 3000);
     }
 
-    private void goLoin(){
-        Intent intent = new Intent(StartActivity.this, LoginActivity.class);
-        startActivity(intent);
-        finish();
+    private synchronized void goLogin() {
+        if (!hasNavigated) {
+            hasNavigated = true;
+            Intent intent = new Intent(StartActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(navigateRunnable);
     }
 }
